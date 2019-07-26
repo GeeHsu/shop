@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery+RWD 製作購物網站</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    <link rel="stylesheet" href="css/all.css">
+
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 設定offcanvas左右選單切換 -->
+        <div class="container clearfix">
+            <div class="aside">
+                <h3>產品專區</h3>
+                <ul>
+                    <li><a href="#">A 產品</a></li>
+                    <li><a href="#">B 產品</a></li>
+                    <li><a href="#">C 產品</a></li>
+                    <li><a href="#">D 產品</a></li>
+                    <li><a href="#">E 產品</a></li>
+                </ul>
+                <h3>訂單查詢</h3>
+                <ul>
+                    <li><a href="#">出貨進度</a></li>
+                    <li><a href="#">退貨申請</a></li>
+                    <li><a href="#">商品退換</a></li>
+                </ul>
+                <h3>門市據點</h3>
+                <ul>
+                    <li><a href="#">北部地區</a></li>
+                    <li><a href="#">中部地區</a></li>
+                    <li><a href="#">南部地區</a></li>
+                    <li><a href="#">東部地區</a></li>
+                    <li><a href="#">離島地區</a></li>
+                </ul>
+                <h3>聯絡客服</h3>
+                <ul>
+                    <li><a href="#">電話</a></li>
+                    <li><a href="#">email</a></li>
+                    <li><a href="#">line</a></li>
+                    <li><a href="#">messenger</a></li>
+                </ul>
+                <div class="asideoff">
+                    <a href="doc/word.window-close"></a>
+                </div>
+            </div>
+            <div class="main">
+                <div class="nav">
+                    <a href="doc/word.bars">選單點選</a>
+                </div>
+            </div>
+        </div>
+        <!-- header -->
+        <div class="header clearfix">
+            <h1 class="logo">
+                <a href="#">SHOP LOGO</a>
+            </h1>
+            <!-- 設計下拉式選單 -->
+            <ul class="menu">
+                <li><a href="#" class="dropdown">首頁</a></li>
+                <li>
+                    <a href="#" class="dropdown">產品專區</a>
+                    <ul class="dropdown-open">
+                        <li><a href="#">A產品</a></li>
+                        <li><a href="#">B產品</a></li>
+                        <li><a href="#">C產品</a></li>
+                        <li><a href="#">D產品</a></li>
+                        <li><a href="#">E產品</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="dropdown">訂單查詢</a>
+                    <ul class="dropdown-open">
+                        <li><a href="#">出貨進度</a></li>
+                        <li><a href="#">退貨申請</a></li>
+                        <li><a href="#">商品退換</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="dropdown">門市據點</a>
+                    <ul class="dropdown-open">
+                        <li><a href="#">北部地區</a></li>
+                        <li><a href="#">中部地區</a></li>
+                        <li><a href="#">南部地區</a></li>
+                        <li><a href="#">東部地區</a></li>
+                        <li><a href="#">離島地區</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="dropdown">聯絡客服</a>
+                    <ul class="dropdown-open">
+                        <li><a href="#">電話</a></li>
+                        <li><a href="#">e-mail</a></li>
+                        <li><a href="#">line</a></li>
+                        <li><a href="#">messenger</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- fixed 固定網頁內容 -->
+        <div class="news">
+            <p>網站消息通知， <br>
+                新產品F產品即將上架</p>
+            <a href="#" class="news-close">關閉</a>
+        </div>
+        <!-- Swiper -輪播效果 -->
+        <!-- Slider main container -->
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <img src="img/banner-1.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/banner-2.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/banner-3.jpg" alt="">
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+        <!-- Lightbox -燈箱效果 -->
+        <section>
+            <h3>產品圖片組</h3>
+            <div class="item clearfix">
+                <ul class="itemList">
+                    <li>
+                        <a href="img/item-1.png" data-lightbox="itemset" data-title="第一張產品圖片">
+                            <img src="img/item-thumb-1.png" alt="">
+                        </a>
+                        <h3>A 產品</h3>
+                        <!-- 使用 fontAwesome 動態加入連結 icon -->
+                        <a href="#" class="shopbag">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>加入購物袋</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="img/item-2.png" data-lightbox="itemset" data-title="第二張產品圖片">
+                            <img src="img/item-thumb-2.png" alt="">
+                        </a>
+                        <h3>B 產品</h3>
+                        <!-- 使用 fontAwesome 動態加入連結 icon -->
+                        <a href="#" class="shopbag">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>加入購物袋</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="img/item-3.png" data-lightbox="itemset" data-title="第三張產品圖片">
+                            <img src="img/item-thumb-3.png" alt="">
+                        </a>
+                        <h3>C 產品</h3>
+                        <a href="#" class="shopbag">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>加入購物袋</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="img/item-4.png" data-lightbox="itemset" data-title="第四張產品圖片">
+                            <img src="img/item-thumb-4.png" alt="">
+                        </a>
+                        <h3>D 產品</h3>
+                        <a href="#" class="shopbag">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>加入購物袋</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="img/item-5.png" data-lightbox="itemset" data-title="第五張產品圖片">
+                            <img src="img/item-thumb-5.png" alt="">
+                        </a>
+                        <h3>E 產品</h3>
+                        <a href="#" class="shopbag">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>加入購物袋</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- footer -->
+        <div class="footer clearfix">
+            <ul>
+                <li>
+                    <h2>產品專區</h2>
+                    <a href="#">A 產品</a>
+                    <a href="#">B 產品</a>
+                    <a href="#">C 產品</a>
+                    <a href="#">D 產品</a>
+                    <a href="#">E 產品</a>
+                </li>
+                <li>
+                    <h2>訂單查詢</h2>
+                    <a href="#">出貨進度</a>
+                    <a href="#">退貨申請</a>
+                    <a href="#">商品退換</a>
+                </li>
+                <li>
+                    <h2>門市據點</h2>
+                    <a href="#">北部地區</a>
+                    <a href="#">中部地區</a>
+                    <a href="#">南部地區</a>
+                    <a href="#">東部地區</a>
+                    <a href="#">離島地區</a>
+                </li>
+                <li>
+                    <h2>聯絡客服</h2>
+                    <a href="#">電話</a>
+                    <a href="#">email</a>
+                    <a href="#">line</a>
+                    <a href="#">messenger</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox-plus-jquery.js"></script>
+    <script src="js/all.js"></script>
+</body>
+
+</html>

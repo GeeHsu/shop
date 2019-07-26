@@ -1,0 +1,403 @@
+/* CSS RESET START */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* CSS RESET END */
+/* CSS RESET SETTING START */
+*, *:before, *:after {box-sizing: border-box;}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.clearfix:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+/* CSS RESET SETTING END */
+
+/* CSS STYLE START */
+.wrap{
+    max-width: 1000px;
+    margin: 0px auto;
+    overflow: hidden;
+}
+
+/* 設定offcanvas左右選單切換 */
+.container{
+    position: relative;
+}
+.main{
+    width: 100%;
+    height: 20px;
+    background: orangered;
+    float: right;
+    transition: 0.5s ease;
+}
+.nav{
+    background: crimson;
+    height: 20px;
+}
+.aside{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 180px;
+    height: 570px;
+    background: yellow;
+    overflow: hidden;
+    transform: translateX(-180px);
+    z-index: 3;
+    transition: 0.3s ease;
+}
+.asideoff{
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+/* 關鍵語法 */
+.open .main{
+    transform: translateX(180px);
+}
+.open .aside{
+    transform: translateX(0px);
+}
+/* aside style setting */
+.aside h3{
+    font-size: 22px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+}
+.aside li a{
+    text-decoration: none;
+    padding-left: 10px;
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-indent: 32px;
+}
+.aside li a:hover{
+    color: orangered;
+}
+/* fontawesome 選單 style */
+.nav a{
+    text-decoration: none;
+    color: gray;
+    font-size: 20px;
+}
+.nav a:hover{
+    color: #434343;
+}
+.nav a:before{
+    margin-right: 15px;
+}
+.asideoff a{
+    text-decoration: none;
+    color: gray;
+    font-size: 20px;
+}
+.asideoff a:hover{
+    color: #434343;
+}
+
+/* header style setting */
+.header{
+    padding: 10px;
+    background: aquamarine;
+    margin-bottom: 10px;
+}
+.logo{
+    float: left;
+}
+.logo a{
+    display: block;
+    width: 162px;
+    height: 50px;
+    background: url("../img/logo.png") no-repeat;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+@media (max-width: 768px){
+    .header{
+        margin-bottom: 0;
+    }
+    .logo{
+        float: none;
+    }
+    .logo a{
+        margin: 0 auto;
+        height: 60px;
+    }
+}
+/* 設計下拉式收合選單 */
+.menu{
+    float: right;
+}
+.menu a{
+    text-decoration: none;
+    padding: 0.5em 0;
+    background: #fff;
+    display: block;
+    text-align: center;
+    transition: all 0.3s;
+}
+.menu a:hover{
+    background: slateblue;
+    color: #fff;
+}
+.menu a.active{
+    background: royalblue;
+    color: #fff;
+}
+/* .menu > li，表示.menu直接他的指定子對象 li */
+.menu > li{
+    float: left;
+    width: 120px;
+    position: relative;
+    
+}
+/* 關鍵語法 */
+.menu ul{
+    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+/* 滑鼠滑過下拉效果 */
+/* .menu > li:hover ul{
+    display: block;
+} */
+
+@media (max-width: 768px){
+    .menu{
+        float: none;
+    }
+    .menu > li{
+        width: 98%;
+        padding: 1%;
+    }
+    .menu ul{
+        width: 98%;
+    }
+}
+
+
+/* fixed 固定網頁內容 */
+.news{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 100px;
+    height: 120px;
+    background: #000;
+    color: blueviolet;
+    z-index: 3;
+}
+.news p{
+    padding: 10px;
+}
+.news .news-close{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-decoration: none;
+    background: red;
+    color: #fff;
+    padding: .5em;
+}
+.news .news-close:hover{
+    background: blue;
+}
+
+@media (max-width: 768px){
+    .news{
+        display: none;
+    }
+}
+/* Swiper -輪播效果 */
+.swiper-container {
+    width: 600px;
+    height: 400px;
+    margin-bottom: 20px; 
+}
+.swiper-container img{
+    margin: 0 auto;
+    display: block;
+}
+
+@media (max-width: 768px){
+    .swiper-container{
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Lightbox -燈箱效果 */
+section > h3{
+    font-size: 28px;
+    text-align: center;
+}
+.item{
+    padding: 10px 155px;
+}
+.itemList li{
+    float: left;
+    width: 220px;
+    height: 300px;
+    border: 1px solid cornflowerblue;
+    margin: 5px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.itemList h3{
+    font-size: 24px;
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 5px;
+    color: blue;
+    cursor: pointer;
+}
+.itemList h3:hover{
+    color: orangered;
+}
+
+@media(max-width: 768px){
+    .item{
+        padding: 10px 5%;
+    }
+    .itemList li{
+        float: none;
+        width: 90%;
+        display: block;
+        margin: 10px auto;
+    }
+    .itemList img{
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+/* 使用 fontAwesome 動態加入連結 icon */
+.shopbag{
+    text-align: center;
+    text-decoration: none;
+    color: steelblue;
+    padding: 5px 50px;
+    border: 1px solid steelblue;
+}
+.shopbag:hover{
+    color: orangered;
+    border: 1px solid orangered;
+}
+
+@media(max-width: 768px){
+    .shopbag{
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+
+/* footer */
+.footer{
+    padding: 0px 50px;
+    background: wheat;
+}
+.footer ul{
+    float: left;
+}
+.footer li{
+    float: left;
+    width: 225px;
+}
+.footer h2{
+    padding: 5px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.footer li a{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(83, 8, 204);
+}
+.footer li a:hover{
+    color: orangered;
+}
+
+@media (max-width: 768px){
+    .footer{
+        padding: 0;
+    }
+    .footer ul{
+        float: none;
+    }
+    .footer li{
+        float: none;
+        width: 100%;
+        border-bottom: 1px dashed gray;
+    }
+    .footer li:nth-child(4){
+        border-bottom: none;
+    }
+    .footer h2{
+        font-size: 24px;
+        text-align: center;
+    }
+    .footer li a{
+        font-size: 18px;
+        text-align: center;
+    }
+}
