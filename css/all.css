@@ -178,6 +178,7 @@ img{
     }
     .logo{
         float: none;
+        padding-top: 10px;
     }
     .logo a{
         margin: 0 auto;
