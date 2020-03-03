@@ -225,7 +225,8 @@ img{
 
 @media (max-width: 768px){
     .menu{
-        float: none;
+        /* float: none; */
+        display: none;
     }
     .menu > li{
         width: 98%;
